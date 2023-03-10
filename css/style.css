@@ -5,7 +5,13 @@ html {
 }
 
 body {
-  /* background-color: pink; */
+  background-color: #303032;
+}
+
+:root {
+  --dark-color: #303032;
+  --light-color: #f1f1f1;
+  --accent-color: #fcdb03;
 }
 
 .container {
@@ -17,7 +23,7 @@ body {
 .accordeon__title {
   font-size: 2rem;
   line-height: 3rem;
-  color: #222222;
+  color: var(--accent-color);
 }
 
 .accordeon__list {
@@ -33,8 +39,9 @@ body {
   padding: 1rem;
   width: 100%;
   background-color: transparent;
-  background-color: antiquewhite;
+  background-color: #1c1c1b;
   border: none;
+  color: var(--light-color);
   cursor: pointer;
 }
 
