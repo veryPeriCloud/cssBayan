@@ -1,0 +1,73 @@
+html {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+}
+
+body {
+  /* background-color: pink; */
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 320px;
+}
+
+.accordeon__title {
+  font-size: 2rem;
+  line-height: 3rem;
+  color: #222222;
+}
+
+.accordeon__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.accordeon__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+  background-color: transparent;
+  background-color: antiquewhite;
+  border: none;
+  cursor: pointer;
+}
+
+.accordeon__svg {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.accordeon__content {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.accordeon__item:hover .accordeon__content,
+.accordeon__item:focus .accordeon__content,
+.accordeon__item:active .accordeon__content {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+.accordeon__item:focus .accordeon__svg,
+.accordeon__item:active .accordeon__svg {
+  opacity: 1;
+  visibility: visible;
+}
+
+.accordeon__item:hover .accordeon__svg {
+  transform: rotate(45deg);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.3s ease-in-out;
+}
+
