@@ -1,0 +1,160 @@
+html {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+}
+
+body {
+  background-color: #303032;
+}
+
+:root {
+  --dark-color: #303032;
+  --light-color: #f1f1f1;
+  --accent-color: #fcdb03;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 1950px;
+}
+
+.accordeon__title {
+  font-size: 2rem;
+  line-height: 3rem;
+  color: var(--accent-color);
+}
+
+.accordeon__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.accordeon__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+  font-weight: 600;
+  text-align: left;
+  background-color: transparent;
+  background-color: #1c1c1b;
+  border: none;
+  color: var(--light-color);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.accordeon__btn-text {
+  font-size: 1rem;
+}
+
+.accordeon__svg {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.accordeon__list:hover .accordeon__svg,
+.accordeon__list:focus .accordeon__svg,
+.accordeon__list:active .accordeon__svg {
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordeon__item {
+  border-top: 2px solid #303032;
+}
+
+.accordeon__item:focus {
+  outline: none;
+}
+
+.accordeon__item:focus .accordeon__btn {
+  color: var(--accent-color);
+}
+
+.accordeon__item:hover .accordeon__svg,
+.accordeon__item:focus .accordeon__svg,
+.accordeon__item:active .accordeon__svg {
+  transform: rotate(45deg);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordeon__label > .accordeon__input {
+  visibility: hidden;
+}
+
+.accordeon__label  >.accordeon__input ~ .accordeon__img {
+  cursor: pointer;
+}
+
+.accordeon__img {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.accordeon__label {
+  display: block;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  transform: scale(0);
+  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.accordeon__item:hover .accordeon__label,
+.accordeon__item:focus .accordeon__label,
+.accordeon__item:active .accordeon__label {
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.accordeon__label:has(.accordeon__input:checked) {
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.accordeon__item:has(.accordeon__input:checked) .accordeon__btn {
+  color: var(--accent-color);
+}
+
+
+@media (min-width: 820px) {
+  .container{
+    padding: 0 5rem;
+  }
+  .accordeon__title {
+    font-size: 3rem;
+  }
+  .accordeon__btn-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container{
+    padding: 0 6rem;
+  }
+  .accordeon__title {
+    font-size: 4rem;
+  }
+  .accordeon__btn {
+    padding: 2rem;
+  }
+  .accordeon__btn-text {
+    font-size: 2rem;
+  }
+}
